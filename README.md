@@ -5,14 +5,14 @@
 This is a clearly arranged Arduino library that allows you to easily drive an RGB color LED with a common ground connection and mix the colors.
 It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/Additive_color), resulting in the following 7 colors: red, green, blue, yellow, cyan, magenta and white.
 
-<p>
+<p align="center">
   <img width="120" height="120" src="Figures/additive_mixing_example.svg">
 </p>
 
-Graphic Source of the color circles: https://de.wikipedia.org/wiki/Datei:Synthese%2B.svg
+[Graphic Source of the color circles](https://de.wikipedia.org/wiki/Datei:Synthese%2B.svg)
 
 If you drive only one pin of the RGB LED, you get the 3 basic colors.
-<p>
+<p align="center">
   <img width="504" height="288" src="Figures/RGB_LED.svg">
 </p>
 

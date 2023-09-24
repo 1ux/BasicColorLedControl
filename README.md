@@ -16,7 +16,16 @@ If you drive only one pin of the RGB LED, you get the 3 basic colors.
   <img width="504" height="288" src="Figures/RGB_LED.svg">
 </p>
 
+## Hardware Setup
 
+An RGB LED combines 3 LEDs in one. Depending on your taste, they are available with a common anode or a common cathode.
+Only the common cathode is considered in this library. Below you can see the internal circuit structure.
+<p align="center">
+  <img width="384" height="354" src="Figures/schematic_RGB_LED.png">
+</p>
+
+It can make sense to choose the common anode if the power consumption of components is higher, as this way it is not the microcontroller that limits the current, but the voltage source to which the microcontroller is usually also connected.
+But this should not be an issue with an RGB LED. Depending on the microcontroller and power supply, however, they should keep an eye on the current to be driven. As a rule, you should consider series resistors for (light-emitting) diodes.
 
 ## Usage
 1. Copy the src directory into your current Arduino project directory. Alternatively, you can also move the „./MultiColorLedControl“ directory to your Arduino library directory. (~/Arduino/libraries/)

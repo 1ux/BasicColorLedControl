@@ -11,7 +11,7 @@ It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/A
 
 [Graphic Source of the color circles](https://de.wikipedia.org/wiki/Datei:Synthese%2B.svg)
 
-If you drive only one pin of the RGB LED, you get the 3 basic colors.
+If you drive only one pin of the RGB LED, you get the 3 basic colors. The other colours are obtained by mixing these basic colours.
 <p align="center">
   <img width="504" height="288" src="Figures/RGB_LED.svg">
 </p>

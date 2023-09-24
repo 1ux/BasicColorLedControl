@@ -9,7 +9,9 @@ It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/A
   <img width="120" height="120" src="Figures/additive_mixing_example.svg">
 </p>
 
+<center>
 [Graphic Source of the color circles](https://de.wikipedia.org/wiki/Datei:Synthese%2B.svg)
+</center>
 
 If you drive only one pin of the RGB LED, you get the 3 basic colors. The other colours are obtained by mixing these basic colours.
 <p align="center">

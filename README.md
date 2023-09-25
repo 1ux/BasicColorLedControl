@@ -2,7 +2,7 @@
 
 # RGB Multi Color LED Control
 
-This is a simple Arduino library used to easily drive a RGB color LED (common anode or common cathode) and mix the colors.
+This is a clearly arranged Arduino library used to easily drive a RGB color LED (common anode/common cathode) and mix the colors.
 It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/Additive_color), resulting in the following 7 colors: red, green, blue, yellow, cyan, magenta and white.
 As long as you use the Arduino definitions, it should not matter which microcontroller or board you use.
 

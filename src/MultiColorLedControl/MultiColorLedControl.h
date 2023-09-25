@@ -2,7 +2,7 @@
 #define MultiColorLedControl_h
 
 /*
- * This is a simple Arduino library used to easily drive a rgb color LED
+ * This is a clearly arranged Arduino library used to easily drive a RGB color LED
  * (Common anode or common cathode) and mix the colors. As long as you use the Arduino definitions,
  * it should not matter which microcontroller or board you use.
  * This program by Michael Krause is licenced under the terms of the GPLv3.
@@ -19,7 +19,7 @@
  * -- Vcc  (LED Pin 3, common anode)
  * -  red  (LED Pin 4)
  */
-enum LedType //Sets the LED Type
+enum LedType //Possible LED types
 {
     COMMON_ANODE,
     COMMON_CATHODE

@@ -3,11 +3,12 @@
 
 
 
-void MultiColorLedControl::setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, uint8_t redLEDport)
+void MultiColorLedControl::setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, uint8_t redLEDport, LedType ledType)
 {
     blueLED_Port = blueLEDport;
     greenLED_Port = greenLEDport;
     redLED_Port = redLEDport;
+    led_Type = ledType;
 
     pinMode(blueLED_Port, OUTPUT);
     pinMode(greenLED_Port, OUTPUT);
@@ -16,9 +17,18 @@ void MultiColorLedControl::setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, 
 
 void MultiColorLedControl::setLEDColor(bool red, bool green, bool blue)
 {
-    digitalWrite(blueLED_Port, blue ? HIGH : LOW);
-    digitalWrite(greenLED_Port, green ? HIGH : LOW);
-    digitalWrite(redLED_Port, red ? HIGH : LOW);
+    if (led_Type == COMMON_ANODE) 
+    {
+        digitalWrite(blueLED_Port, blue ? LOW : HIGH);
+        digitalWrite(greenLED_Port, green ? LOW : HIGH);
+        digitalWrite(redLED_Port, red ? LOW : HIGH);
+    } 
+    else 
+    {
+        digitalWrite(blueLED_Port, blue ? HIGH : LOW);
+        digitalWrite(greenLED_Port, green ? HIGH : LOW);
+        digitalWrite(redLED_Port, red ? HIGH : LOW);
+    }
 }
 
 void MultiColorLedControl::unsetLEDs(void)

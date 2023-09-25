@@ -1,4 +1,4 @@
-*„Das Gesicht des Menschen erkennst du bei Licht, seinen Charakter im Dunkeln.“ - Verfasser Unbekannt*
+*„Das Gesicht des Menschen erkennst du bei Licht, seinen Charakter im Dunkeln.“ - Verfasser unbekannt*
 
 # RGB Multi Color LED Control
 
@@ -22,7 +22,7 @@ If you drive only one pin of the RGB LED, you get the 3 basic colors. The other 
 An RGB LED combines 3 LEDs in one. Depending on your taste, they are available with a common anode or a common cathode.
 Only the common cathode is considered in this library. Below you can see the internal circuit structure.
 <p align="center">
-  <img width="384" height="354" src="Figures/schematic_RGB_LED.png">
+  <img width="340" height="313" src="Figures/schematic_RGB_LED.png">
 </p>
 
 It can make sense to choose the common anode if the power consumption of components is higher, as this way it is not the microcontroller that limits the current, but the voltage source to which the microcontroller is usually also connected.

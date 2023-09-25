@@ -60,6 +60,12 @@ All other methods should be self-explanatory. Here are all the methods of the li
 ## Library overview
 
 ```C
+enum LedType //possible LED types
+{
+    COMMON_ANODE,   //common Vcc
+    COMMON_CATHODE  //common ground
+};
+
 // Configures the outputs, sets the LED type and defines the hardware ports based on their connection
 void setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, uint8_t redLEDport, LedType ledType);
 // Raw function to mix the colors by yourself. true means LED on, independent of LED type

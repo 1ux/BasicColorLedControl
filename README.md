@@ -62,7 +62,7 @@ All other methods should be self-explanatory. Here are all the methods of the li
 ```C
     // Configures the outputs, sets the LED type and defines the hardware ports based on their connection
     void setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, uint8_t redLEDport, LedType ledType);
-    // Raw function to mix the LED colors by yourself. true means always switch on LED, independent of LED type (COMMON_ANODE/CATHODE)
+    // Raw function to mix the LED colors by yourself. true means LED on, independent of LED type (COMMON_ANODE/CATHODE)
     void setLEDColor(bool red, bool green, bool blue);
     // Deactivates all LEDs, false means always switch off
     void unsetLEDs(void);

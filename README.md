@@ -62,23 +62,23 @@ All other methods should be self-explanatory. Here are all the methods of the li
 ```C
 // Configures the outputs, sets the LED type and defines the hardware ports based on their connection
 void setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, uint8_t redLEDport, LedType ledType);
-// Raw function to mix the LED colors by yourself. true means LED on, independent of LED type (COMMON_ANODE/CATHODE)
+// Raw function to mix the colors by yourself. true means LED on, independent of LED type
 void setLEDColor(bool red, bool green, bool blue);
-// Deactivates all LEDs, false means always switch off
+// Deactivates all LEDs, false means switch off, independent of LED type
 void unsetLEDs(void);
-// Activate only the red LED, true means always switch on LED
+// Activate only the red LED, independent of LED type
 void setRedLED(bool state);
-// Activate only the blue LED, true means always switch on LED
+// Activate only the blue LED, independent of LED type
 void setBlueLED(bool state);
-// Activate only the green LED, true means always switch on LED
+// Activate only the green LED, independent of LED type
 void setGreenLED(bool state);
-// Activate only the yellow LED, true means always switch on LED
+// Activate only the yellow LED, independent of LED type
 void setYellowLED(bool state);
-// Activate only the cyan LED, true means always switch on LED
+// Activate only the cyan LED, independent of LED type
 void setCyanLED(bool state);
-// Activate only the magenta LED, true means always switch on LED
+// Activate only the magenta LED, independent of LED type
 void setMagentaLED(bool state);
-// Activate only the white LED, true means always switch on LED
+// Activate only the white LED, independent of LED type
 void setWhiteLED(bool state);
 // Test the LED functions in the Arduino loop() function
 void TestLEDs(void);

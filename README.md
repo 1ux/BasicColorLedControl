@@ -34,7 +34,7 @@ But this should not be an issue with one RGB LED. Depending on the microcontroll
 2. Include the header file using the include directive.
 3. This library is organized in a class. First create an object.
 4. Then call the setup method and specify the 3 hardware ports of the microcontroller to which the RGB LED is connected. As the last parameter, specify the LED type as COMMON_ANODE or COMMON_CATHODE.
-5. Now you can use the LED. First run the test method that displays all colors individually to make sure everything is connected correctly to the microcontroller.
+5. Now you can use the LED. First run the TestLEDs() method that displays all colors individually to make sure everything is connected correctly to the microcontroller.
 
 
 Here is an example as Common Cathode :

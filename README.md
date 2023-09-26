@@ -27,8 +27,7 @@ Below you can see the internal circuit structure.
   <img width="273" height="266" src="Figures/schematic_RGB_LED_Common_Anode.png">
 </p>
 
-It can make sense to choose the common anode if the power consumption of components is higher, as this way it is not the microcontroller that limits the current, but the voltage source to which the microcontroller is usually also connected.
-But this should not be an issue with one RGB LED. Depending on the microcontroller and power supply, however, they should keep an eye on the current to be driven. As a rule, you should consider series resistors for (light-emitting) diodes. I have recorded the characteristics of an RGB LED for you. Without a series resistor, not even the red LED would last long in its circuit at 3.3 volts.
+It may make sense to choose the common anode if the current consumption of the components is higher, because then it is not the microcontroller that limits the current, but the voltage source to which the microcontroller is normally connected. With a single RGB LED this should not be a problem. However, depending on the microcontroller and the power supply, you should keep an eye on the current to be driven. As a rule, you should consider using series resistors for (light) diodes. I have drawn the characteristics of a RGB LED for you. Without a resistor, the red LED would not last long in its circuit at 3.3 volts.
 
 <p align="center">
   <img width="520" height="391" src="Figures/RGB_LED_Characteristics.svg">

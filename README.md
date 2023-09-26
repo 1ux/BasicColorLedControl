@@ -7,15 +7,13 @@ It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/A
 As long as you use the Arduino definitions, it should not matter which microcontroller or board you use.
 
 <p align="center">
-  <img width="120" height="120" src="Figures/additive_mixing_example.svg">
+  <img width="200" height="155" src="Figures/additive_mixing_example.svg">
 </p>
-
-[Graphic Source of the color circles](https://de.wikipedia.org/wiki/Datei:Synthese%2B.svg)
 
 
 If you drive only one pin of the RGB LED, you get the 3 basic colors. The other colours are obtained by mixing these basic colours.
 <p align="center">
-  <img width="504" height="288" src="Figures/RGB_LED.svg">
+  <img width="320" height="234" src="Figures/RGB_LED.svg">
 </p>
 
 ## Hardware Setup
@@ -23,8 +21,7 @@ If you drive only one pin of the RGB LED, you get the 3 basic colors. The other 
 An RGB LED combines 3 LEDs in one. Depending on your taste, they are available with a common anode or a common cathode.
 Below you can see the internal circuit structure.
 <p align="center">
-  <img width="281" height="275" src="Figures/schematic_RGB_LED_Common_Cathode.png">
-  <img width="273" height="266" src="Figures/schematic_RGB_LED_Common_Anode.png">
+  <img width="410" height="276" src="Figures/schematic_RGB_LED.svg">
 </p>
 
 It may make sense to choose the common anode if the current consumption of the components is higher, because then it is not the microcontroller that limits the current, but the voltage source to which the microcontroller is normally connected. (However, keep to the max pin current absorption of the microcontroller.) With a single RGB common cathode LED this should not be a problem. You should always keep an eye on the total current to be driven and the individual currents per port. As a rule, you should consider using series resistors for (light) diodes. I have drawn the characteristics of a RGB LED for you. Depending on which microcontroller you use, the red LED would not last long in your circuit at 3.3 volts without a resistor. Even more problematic are 5 Volt systems. My advice is to limit the current to 20 mA per LED (colour). Because the curves are so far apart, a common cathode/anode resistor is not advisable. If you fuse the red LED with 20mA, you will hardly see any light from the blue LED.

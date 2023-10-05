@@ -2,9 +2,12 @@
 
 # RGB Multi Color LED Control
 
-This is a clearly arranged Arduino library used to easily drive a RGB color LED (common anode/common cathode) and mix the colors.
+This is a tiny and clearly arranged Arduino library for the basic RGB LED functions, to easily drive an RGB color LED (common anode/common cathode) and mix the colors.
 It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/Additive_color), resulting in the following 7 colors: red, green, blue, yellow, cyan, magenta and white.
+This concept relies on keeping the programme code small. The functionality should be expanded using the inheritance concept of object-oriented programming.
+
 As long as you use the Arduino definitions, it should not matter which microcontroller or board you use.
+
 
 <p align="center">
   <img width="200" height="155" src="Figures/additive_mixing_example.svg">
@@ -47,12 +50,12 @@ Please note that there are qualitative differences in LEDs and my characteristic
 Here is an example as Common Cathode :
 
 ```C
-#include "src/MultiColorLedControl/MultiColorLedControl.h"
-MultiColorLedControl ledControl;
+#include "src/BasicColorLedControl.h"
+BasicColorLedControl ledControl;
 
 void setup() {
   // put your setup code here, to run once:
-  ledControl.setupLEDs(11,10,9,COMMON_CATHODE);
+  ledControl.setupLEDs(2,3,4,COMMON_CATHODE);
 
 }
 
@@ -74,7 +77,7 @@ enum LedType //possible LED types
 };
 
 // Configures the outputs, sets the LED type and defines the hardware ports based on their connection
-void setupLEDs(uint8_t blueLEDport, uint8_t greenLEDport, uint8_t redLEDport, LedType ledType);
+void setupLEDs(uint8_t redLEDport, uint8_t greenLEDport, uint8_t blueLEDport, LedType ledType);
 // Raw function to mix the colors by yourself. true means LED on, independent of LED type
 void setLEDColor(bool red, bool green, bool blue);
 // Deactivates all LEDs, false means switch off, independent of LED type

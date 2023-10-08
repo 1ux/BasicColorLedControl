@@ -4,8 +4,10 @@
 /*
  * This is a tiny and clearly arranged Arduino library for the basic RGB LED functions, 
  * to easily drive an RGB color LED (common anode/common cathode) and mix the colors.
+ * The LEDs are intuitively turned on or off, regardless of their type.
  * As long as you use the Arduino definitions,
  * it should not matter which microcontroller or board you use.
+ *
  * This program by Michael Krause is licenced under the terms of the GPLv3.
  * 
  *  Common Cathode LED Pins Hardware-Notes
@@ -26,6 +28,17 @@ enum LedType //Possible LED types
     COMMON_CATHODE
 };
 
+enum LedColor //Basic RGB LED Colors
+{
+    RED,
+    BLUE,
+    GREEN,
+    YELLOW,
+    CYAN,
+    MAGENTA,
+    WHITE
+};
+
 class BasicColorLedControl 
 {
     private:
@@ -35,26 +48,18 @@ class BasicColorLedControl
         LedType led_Type;
 
     public:
-        // Configures the outputs, sets the LED type and defines the hardware ports based on their connection
+        // Configures the outputs, sets the LedType (COMMON_ANODE/COMMON_CATHODE), defines the hardware ports based on their connection
         void setupLEDs(uint8_t redLEDport, uint8_t greenLEDport, uint8_t blueLEDport, LedType ledType);
-        // Raw function to mix the LED colors by yourself. true means always switch on LED, independent of LED type (COMMON_ANODE/CATHODE)
+
+        //Raw function call to mix the LED colors by yourself. Good for efficient bit shifting operations
         void setLEDColor(bool red, bool green, bool blue);
-        // Deactivates all LEDs, independent of LED type
+
+        //Comfortable function call to set the LED color. You have the choice: RED, BLUE, GREEN, YELLOW, CYAN, MAGENTA, WHITE
+        void setLEDColor(LedColor color);
+
+        // Deactivates all LEDs
         void unsetLEDs(void);
-        // Activate only the red LED, independent of LED type
-        void setRedLED(bool state);
-        // Activate only the blue LED, independent of LED type
-        void setBlueLED(bool state);
-        // Activate only the green LED, independent of LED type
-        void setGreenLED(bool state);
-        // Activate only the yellow LED, independent of LED type
-        void setYellowLED(bool state);
-        // Activate only the cyan LED, independent of LED type
-        void setCyanLED(bool state);
-        // Activate only the magenta LED, independent of LED type
-        void setMagentaLED(bool state);
-        // Activate only the white LED, independent of LED type
-        void setWhiteLED(bool state);
+
         // Test the LED functions in the Arduino loop() function
         void TestLEDs(void);
 };

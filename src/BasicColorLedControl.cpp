@@ -37,62 +37,50 @@ void BasicColorLedControl::unsetLEDs(void)
     setLEDColor(false, false, false);
 }
 
-void BasicColorLedControl::setRedLED(bool state)
+void BasicColorLedControl::setLEDColor(LedColor color)
 {
-    setLEDColor(state, false, false);
-}
-
-void BasicColorLedControl::setBlueLED(bool state)
-{
-    setLEDColor(false, false, state);
-}
-
-void BasicColorLedControl::setGreenLED(bool state)
-{
-    setLEDColor(false, state, false);
-}
-
-void BasicColorLedControl::setYellowLED(bool state)
-{
-    setLEDColor(state, state, false);
-}
-
-void BasicColorLedControl::setCyanLED(bool state)
-{
-    setLEDColor(false, state, state);
-}
-
-void BasicColorLedControl::setMagentaLED(bool state)
-{
-    setLEDColor(state, false, state);
-}
-
-void BasicColorLedControl::setWhiteLED(bool state)
-{
-    setLEDColor(state, state, state);
+    switch (color)
+    {
+        case RED:
+            setLEDColor(true, false, false);
+            break;
+        case BLUE:
+            setLEDColor(false, false, true);
+            break;
+        case GREEN:
+            setLEDColor(false, true, false);
+            break;
+        case YELLOW:
+            setLEDColor(true, true, false);
+            break;
+        case CYAN:
+            setLEDColor(false, true, true);
+            break;
+        case MAGENTA:
+            setLEDColor(true, false, true);
+            break;
+        case WHITE:
+            setLEDColor(true, true, true);
+            break;
+        default:
+            unsetLEDs();
+            break;
+    }
 }
 
 void BasicColorLedControl::TestLEDs(void)
 {
     static unsigned long lastChange = 0;
-    static uint8_t state = 0;
+    static LedColor state = RED;
 
     if (millis() - lastChange > 1300) 
     {
         lastChange = millis();
         unsetLEDs();
 
-        switch (state)
-        {
-            case 0: setRedLED(true); break;
-            case 1: setGreenLED(true); break;
-            case 2: setBlueLED(true); break;
-            case 3: setYellowLED(true); break;
-            case 4: setCyanLED(true); break;
-            case 5: setMagentaLED(true); break;
-            case 6: setWhiteLED(true); break;
-        }
+        setLEDColor(state);
 
-        state = (state + 1) % 7;
+        state = static_cast<LedColor>((state + 1) % 7);
     }
+
 }

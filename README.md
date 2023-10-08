@@ -1,6 +1,6 @@
 *„Das Gesicht des Menschen erkennst du bei Licht, seinen Charakter im Dunkeln.“ - Verfasser unbekannt*
 
-# RGB Multi Color LED Control
+# Basic Multi Color LED Control
 
 This is a tiny and clearly arranged Arduino library for the basic RGB LED functions, to easily drive an RGB color LED (common anode/common cathode) and mix the colors.
 It uses the principle of [additive color mixing](https://en.wikipedia.org/wiki/Additive_color), resulting in the following 7 colors: red, green, blue, yellow, cyan, magenta and white.
@@ -51,17 +51,17 @@ Here is an example as Common Cathode :
 
 ```C
 #include "src/BasicColorLedControl.h"
-BasicColorLedControl ledControl;
+BasicColorLedControl RGBled;
 
 void setup() {
   // put your setup code here, to run once:
-  ledControl.setupLEDs(2,3,4,COMMON_CATHODE);
+  RGBled.setupLEDs(9,10,11,COMMON_CATHODE);
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  ledControl.TestLEDs();
+  RGBled.TestLEDs();
 }
 ```
 
@@ -70,32 +70,35 @@ All other methods should be self-explanatory. Here are all the methods of the li
 ## Library overview
 
 ```C
+enum LedColor //Basic RGB LED Colors
+{
+    RED,
+    BLUE,
+    GREEN,
+    YELLOW,
+    CYAN,
+    MAGENTA,
+    WHITE
+};
+
 enum LedType //possible LED types
 {
     COMMON_ANODE,   //common Vcc
     COMMON_CATHODE  //common ground
 };
 
-// Configures the outputs, sets the LED type and defines the hardware ports based on their connection
+// Configures the outputs, sets the LedType (COMMON_ANODE/COMMON_CATHODE), defines the hardware ports based on their connection
 void setupLEDs(uint8_t redLEDport, uint8_t greenLEDport, uint8_t blueLEDport, LedType ledType);
-// Raw function to mix the colors by yourself. true means LED on, independent of LED type
+
+//Raw function call to mix the LED colors by yourself. Good for efficient bit shifting operations
 void setLEDColor(bool red, bool green, bool blue);
-// Deactivates all LEDs, false means switch off, independent of LED type
+
+//Comfortable function call to set the LED color. You have the choice: RED, BLUE, GREEN, YELLOW, CYAN, MAGENTA, WHITE
+void setLEDColor(LedColor color);
+
+// Deactivates all LEDs
 void unsetLEDs(void);
-// Activate only the red LED, independent of LED type
-void setRedLED(bool state);
-// Activate only the blue LED, independent of LED type
-void setBlueLED(bool state);
-// Activate only the green LED, independent of LED type
-void setGreenLED(bool state);
-// Activate only the yellow LED, independent of LED type
-void setYellowLED(bool state);
-// Activate only the cyan LED, independent of LED type
-void setCyanLED(bool state);
-// Activate only the magenta LED, independent of LED type
-void setMagentaLED(bool state);
-// Activate only the white LED, independent of LED type
-void setWhiteLED(bool state);
+
 // Test the LED functions in the Arduino loop() function
 void TestLEDs(void);
 ```

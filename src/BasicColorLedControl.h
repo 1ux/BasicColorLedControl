@@ -31,8 +31,8 @@ enum LedType //Possible LED types
 enum LedColor //Basic RGB LED Colors
 {
     RED,
-    BLUE,
     GREEN,
+    BLUE,
     YELLOW,
     CYAN,
     MAGENTA,

@@ -73,8 +73,8 @@ All other methods should be self-explanatory. Here are all the methods of the li
 enum LedColor //Basic RGB LED Colors
 {
     RED,
-    BLUE,
     GREEN,
+    BLUE,
     YELLOW,
     CYAN,
     MAGENTA,
@@ -91,7 +91,7 @@ enum LedType //possible LED types
 void setupLEDs(uint8_t redLEDport, uint8_t greenLEDport, uint8_t blueLEDport, LedType ledType);
 //Raw function call to mix the LED colors by yourself. Good for efficient bit shifting operations
 void setLEDColor(bool red, bool green, bool blue);
-//Comfortable function call to set the LED color. You have the choice: RED, BLUE, GREEN, YELLOW, CYAN, MAGENTA, WHITE
+//Comfortable function call to set the LED color. You have the choice: RED,GREEN,BLUE,YELLOW,CYAN,MAGENTA,WHITE
 void setLEDColor(LedColor color);
 // Deactivates all LEDs
 void unsetLEDs(void);

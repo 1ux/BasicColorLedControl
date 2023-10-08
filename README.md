@@ -89,16 +89,12 @@ enum LedType //possible LED types
 
 // Configures the outputs, sets the LedType (COMMON_ANODE/COMMON_CATHODE), defines the hardware ports based on their connection
 void setupLEDs(uint8_t redLEDport, uint8_t greenLEDport, uint8_t blueLEDport, LedType ledType);
-
 //Raw function call to mix the LED colors by yourself. Good for efficient bit shifting operations
 void setLEDColor(bool red, bool green, bool blue);
-
 //Comfortable function call to set the LED color. You have the choice: RED, BLUE, GREEN, YELLOW, CYAN, MAGENTA, WHITE
 void setLEDColor(LedColor color);
-
 // Deactivates all LEDs
 void unsetLEDs(void);
-
 // Test the LED functions in the Arduino loop() function
 void TestLEDs(void);
 ```

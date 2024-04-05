@@ -40,12 +40,6 @@ At 5V use for red: around 150Ω, for green around 100Ω and for blue also 100Ω.
 Please note that there are qualitative differences in LEDs and my characteristics do not have to match your LEDs.
 
 ## Usage
-1. Copy the src directory into your current Arduino project directory. Alternatively, you can also move the „./MultiColorLedControl“ directory to your Arduino library directory. (~/Arduino/libraries/)
-2. Include the header file using the include directive.
-3. This library is organized in a class. First create an object.
-4. Then call the setup method and specify the 3 hardware ports of the microcontroller to which the RGB LED is connected. As the last parameter, specify the LED type as COMMON_ANODE or COMMON_CATHODE.
-5. Now you can use the LED. First run the TestLEDs() method that displays all colors individually to make sure everything is connected correctly to the microcontroller.
-
 
 Here is an example as Common Cathode :
 

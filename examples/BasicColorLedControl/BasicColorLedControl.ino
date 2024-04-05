@@ -17,7 +17,7 @@ void unsetLEDs(void);
 void TestLEDs(void);
 */
 
-#include "src/BasicColorLedControl.h"
+#include <BasicColorLedControl.h>
 BasicColorLedControl RGBled;
 
 void setup() {
